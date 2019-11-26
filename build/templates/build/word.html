@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章</title>
+</head>
+<body>
+    <form action="/build/article" method="post">
+        {% csrf_token %}
+    <p>
+        标题: <input type="text" name="title" value="{{ title }}" autocomplete="off">
+        <span>{{ title_error }}</span>
+        <input type="submit" value="生成">
+    </p>
+    <p>
+        <textarea name="content" cols="100" rows="100">{{ content }}</textarea>
+    </p>
+</body>
+</html>
